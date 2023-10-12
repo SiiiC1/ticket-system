@@ -10,13 +10,13 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Connect to database via mongoose
-const uri = process.env.ATLAS_URI;
+// Connect to the database via mongoose
+const uri = 'mongodb+srv://test1:123456!@cluster0.l632wvw.mongodb.net/?retryWrites=true&w=majority';
 mongoose.connect(uri, { 
 	useNewUrlParser: true, 
 	useCreateIndex: true, 
-	useUnifiedTopology: true }
-);
+	useUnifiedTopology: true 
+});
 
 mongoose.connection.once('open', () => {
 	console.log("MongoDB database connection established successfully.");

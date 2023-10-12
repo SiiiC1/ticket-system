@@ -71,7 +71,7 @@ export default class TypeChart extends Component {
 					data={this.state.data}
 					options={options}
 					height={300}
-					width={500} />
+					width={400} />
 			</div>
 		);
 	}
