@@ -38,6 +38,8 @@ export default class Ticket extends Component {
           priority: res.data.priority,
           status: res.data.status,
           type: res.data.type,
+          startDate: res.data.startDate,
+          deadline: res.data.deadline,
         });
       })
       .catch((error) => console.log(error));
@@ -58,6 +60,9 @@ export default class Ticket extends Component {
         {getPriorities(this.props.ticket.priority)}
         <td>{this.props.ticket.status}</td>
         <td>{this.props.ticket.type}</td>
+        <td>{this.state.startDate}</td>
+        <td>{this.state.deadline}</td>
+
         <td>
           <Link
             to={"/edit/" + this.props.ticket._id}

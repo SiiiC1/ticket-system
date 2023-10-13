@@ -15,6 +15,8 @@ export default class MarkButton extends React.Component {
             priority: '',
             status: '',
             type: '',
+            startDate: new Date(),
+            deadline: new Date(),
             users: [],
             projects: []
         };
@@ -31,7 +33,9 @@ export default class MarkButton extends React.Component {
                     assignee: res.data.assignee,
                     priority: res.data.priority,
                     status: res.data.status,
-                    type: res.data.type
+                    type: res.data.type,
+                    startDate:res.data.startDate,
+                    deadline:res.data.deadline
                 })
             })
             .catch((error) => { console.log(error); })
@@ -73,7 +77,9 @@ export default class MarkButton extends React.Component {
             assignee: this.state.assignee,
             priority: this.state.priority,
             status: this.state.status,
-            type: this.state.type
+            type: this.state.type,
+            startDate: this.state.startDate,
+            deadline: this.state.deadline,
         }
 
         axios.post('http://localhost:5000/tickets/update/' + this.props._id, ticket)
