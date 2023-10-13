@@ -77,7 +77,7 @@ export default class PriorityChart extends Component {
 					data={this.state.data}
 					options={options}
 					height={350}
-					width={400} />
+					width={350} />
 			</div>
 		);
 	}

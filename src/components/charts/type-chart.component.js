@@ -70,8 +70,8 @@ export default class TypeChart extends Component {
 				<Doughnut 
 					data={this.state.data}
 					options={options}
-					height={300}
-					width={400} />
+					height={350}
+					width={350} />
 			</div>
 		);
 	}
