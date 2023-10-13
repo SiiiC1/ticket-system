@@ -19,9 +19,6 @@ router.route('/create').post((req, res) => {
     const priority = req.body.priority;
     const status = req.body.status;
     const type = req.body.type;
-    const startDate = new Date(req.body.startDate);
-    const deadline = new Date(req.body.deadline);
-    
 
     const newTicket = new Ticket({
     	title,
@@ -31,8 +28,6 @@ router.route('/create').post((req, res) => {
     	priority,
     	status,
     	type,
-        startDate, 
-        deadline, 
     });
 
     newTicket.save()
@@ -58,8 +53,6 @@ router.route('/update/:id').post((req,res) => {
 	    	ticket.priority = req.body.priority;
 	    	ticket.status = req.body.status;
 	    	ticket.type = req.body.type;
-            ticket.startDate = req.body.startDate;
-            ticket.deadline = req.body.deadline;
 
             ticket.save()
                 .then(() => res.json('Ticket updated'))
