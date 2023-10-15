@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Ticket from "./ticket-display";
-
+import Ticket2 from "./ticket-display-resolve";
 export default class TicketList extends Component {
   constructor(props) {
     super(props);
@@ -49,7 +49,7 @@ export default class TicketList extends Component {
     return this.state.tickets.map((currentTicket) => {
       if (currentTicket.status === "Resolved") {
         return (
-          <Ticket
+          <Ticket2
             ticket={currentTicket}
             deleteTicket={this.deleteTicket}
             key={currentTicket._id}
@@ -93,8 +93,6 @@ export default class TicketList extends Component {
               <th>Priority</th>
               <th>Status</th>
               <th>Type</th>
-              <th>Start Date</th>
-              <th>Deadline</th>
               <th>Actions</th>
             </tr>
           </thead>

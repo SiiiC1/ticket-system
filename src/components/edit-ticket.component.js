@@ -293,6 +293,7 @@ export default class EditTicket extends Component {
               className="form-control"
               value={this.state.deadline}
               onChange={this.onChangeDeadline}
+             
             />
           </div>
 

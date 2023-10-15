@@ -274,6 +274,7 @@ export default class CreateTicket extends Component {
               className="form-control"
               value={this.state.startDate}
               onChange={this.onChangeStartDate}
+              required
             />
           </div>
 
@@ -284,6 +285,7 @@ export default class CreateTicket extends Component {
               className="form-control"
               value={this.state.deadline}
               onChange={this.onChangeDeadline}
+              required
             />
           </div>
           <div className="form-group">
