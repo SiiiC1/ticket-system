@@ -38,6 +38,8 @@ export default class Ticket extends Component {
           priority: res.data.priority,
           status: res.data.status,
           type: res.data.type,
+          startDate: res.data.startDate,
+          deadline: res.data.deadline,
         });
       })
       .catch((error) => console.log(error));
@@ -49,6 +51,19 @@ export default class Ticket extends Component {
   }
 
   render() {
+    const startDateISO = this.props.ticket.startDate;
+    const deadlineISO = this.props.ticket.deadline;
+
+    const options = { month: "long", day: "numeric", year: "numeric" };
+
+    const formattedStartDate = new Date(startDateISO).toLocaleDateString(
+      undefined,
+      options
+    );
+    const formattedDeadline = new Date(deadlineISO).toLocaleDateString(
+      undefined,
+      options
+    );
     return (
       <tr>
         <td>{this.props.ticket.title}</td>
@@ -58,6 +73,8 @@ export default class Ticket extends Component {
         {getPriorities(this.props.ticket.priority)}
         <td>{this.props.ticket.status}</td>
         <td>{this.props.ticket.type}</td>
+        <td>{formattedStartDate}</td>
+        <td>{formattedDeadline}</td>
         <td>
           <Link
             to={"/edit/" + this.props.ticket._id}

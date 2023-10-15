@@ -10,6 +10,8 @@ const ticketSchema = new Schema({
     priority: { type: String, required: true },
     status: { type: String, required: true },
     type: { type: String, required: true },
+    startDate: { type: Date }, 
+    deadline: { type: Date },  
 }, {
     timestamps: true,
 });
